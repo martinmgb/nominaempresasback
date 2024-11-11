@@ -16,9 +16,8 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados en t
 
 ### Clona el repositorio de Git:
 
-   ```bash
-   git clone https://github.com/martinmgutierrezb/nominaempresasback.git
-   cd nominaempresasback
+   ```
+   git clone https://github.com/martinmgb/nominaempresasback.git
    ```
 ### Importar la Base de Datos desde el archivo SQL ubicado en el repositorio
 
@@ -40,21 +39,21 @@ Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 ### Crear la base de datos (si aún no existe):
 
 En el cliente de PostgreSQL, crea una base de datos para tu proyecto:
-	```bash
+	```
 	CREATE DATABASE empresas_bd;
 	```
 Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 
 ### Importar el archivo SQL:
 
-Una vez que tengas la base de datos creada, puedes importar el archivo .sql exportado desde pgAdmin con el siguiente comando:
+Una vez que tengas la base de datos creada, puedes importar el archivo empresas_bd.sql ubicado en /rutaproyecto/script/empresas_bd.sql con el siguiente comando:
 
-	```bash
+	```
 	psql -U postgres -d empresas_bd -f /ruta/a/tu/empresas_bd.sql
 	```
 Si usas Docker, el comando sería similar pero desde dentro del contenedor:
 
-docker exec -i nombre_del_contenedor psql -U postgres -d empresas_bd -f /ruta/a/tu/archivo.sql
+docker exec -i nombre_del_contenedor psql -U postgres -d empresas_bd -f /ruta/a/tu/empresas_bd.sql
 
 Esto importará todas las tablas, datos, índices y relaciones definidas en el archivo .sql a tu base de datos PostgreSQL.
 
@@ -82,7 +81,7 @@ Dependiendo de la configuración del proyecto, puedes tener diferentes endpoints
 ###Ejecutar con docker compose
 Compilar y ejecutar el proyecto con Maven:
 
-	```bash
+	``` bash
 	mvn clean compile package
 	```
 
@@ -122,7 +121,8 @@ Docker y Docker Compose (Contenerización y orquestación)
 Maven (Gestión de dependencias)
 
 #Estructura del Proyecto
-nominaEmpresasBack/
+```textplain
+fuentes/nominaEmpresasBack/
 ├── src/
 │ ├── main/
 │ │ ├── java/
@@ -134,6 +134,9 @@ nominaEmpresasBack/
 ├── docker-compose.yml
 ├── pom.xml
 └── README.md
+script/
+├── empresas_bd.sql
+```
 
 src/main/java: Contiene el código fuente de la aplicación.
 src/main/resources: Contiene los archivos de configuración, como application.properties.
