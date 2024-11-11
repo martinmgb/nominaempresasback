@@ -16,9 +16,9 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados en t
 
 ### Clona el repositorio de Git:
 
-   ```
-   git clone https://github.com/martinmgb/nominaempresasback.git
-   ```
+```
+git clone https://github.com/martinmgb/nominaempresasback.git
+```
 ### Importar la Base de Datos desde el archivo SQL ubicado en el repositorio
 
 Puedes importarlo de la siguiente manera:
@@ -26,9 +26,9 @@ Puedes importarlo de la siguiente manera:
 Acceder a tu servidor PostgreSQL:
 
 Si tienes PostgreSQL instalado en tu máquina, puedes usar el siguiente comando para acceder al cliente interactivo de PostgreSQL:
-	```bash
-	psql -U postgres -h localhost
-	```
+```bash
+psql -U postgres -h localhost
+```
 
 Si tienes un contenedor Docker con PostgreSQL, accede al contenedor:
 
@@ -39,18 +39,18 @@ Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 ### Crear la base de datos (si aún no existe):
 
 En el cliente de PostgreSQL, crea una base de datos para tu proyecto:
-	```
-	CREATE DATABASE empresas_bd;
-	```
+```bash
+CREATE DATABASE empresas_bd;
+```
 Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 
 ### Importar el archivo SQL:
 
 Una vez que tengas la base de datos creada, puedes importar el archivo empresas_bd.sql ubicado en /rutaproyecto/script/empresas_bd.sql con el siguiente comando:
 
-	```
-	psql -U postgres -d empresas_bd -f /ruta/a/tu/empresas_bd.sql
-	```
+```
+psql -U postgres -d empresas_bd -f /ruta/a/tu/empresas_bd.sql
+```
 Si usas Docker, el comando sería similar pero desde dentro del contenedor:
 
 docker exec -i nombre_del_contenedor psql -U postgres -d empresas_bd -f /ruta/a/tu/empresas_bd.sql
@@ -64,9 +64,9 @@ Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 ###Ejecutar en una máquina local
 Compilar y ejecutar el proyecto con Maven imdicando las siguientes variables de entorno:
 
-	```bash
-	DB_HOST=localhost DB_PORT=5432 DB_DATABASE=empresas_bd DB_USER=root DB_PASSWORD=root mvn spring-boot:run mvn spring-boot
-	```
+```bash
+DB_HOST=localhost DB_PORT=5432 DB_DATABASE=empresas_bd DB_USER=root DB_PASSWORD=root mvn spring-boot:run mvn spring-boot
+```
 
 Esto compilará el proyecto y lo ejecutará en el puerto predeterminado (8080).
 
@@ -81,21 +81,21 @@ Dependiendo de la configuración del proyecto, puedes tener diferentes endpoints
 ###Ejecutar con docker compose
 Compilar y ejecutar el proyecto con Maven:
 
-	``` bash
-	mvn clean compile package
-	```
+```bash
+mvn clean compile package
+```
 
 Luego crear imagen del proyecto
 
-	```bash
-	docker build -t api-nominaempresas .
-	```
+```bash
+docker build -t api-nominaempresas .
+```
 	
 Finalmente ejecutar el docker compose:
 
-	```bash
-	docker-compose up
-	```
+```bash
+docker-compose up
+```
 	
 Esto levantará tres contenedores: postgres, pgadmin y api-nominaempresas
 
