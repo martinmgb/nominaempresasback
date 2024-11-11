@@ -59,9 +59,9 @@ Esto importará todas las tablas, datos, índices y relaciones definidas en el a
 
 Lo puedes hacer tambien desde pgadmin (en tu maquina o contenedor)
 
-##Ejecutar el Proyecto
+## Ejecutar el Proyecto
 
-###Ejecutar en una máquina local
+### Ejecutar en una máquina local
 Compilar y ejecutar el proyecto con Maven imdicando las siguientes variables de entorno:
 
 ```bash
@@ -78,7 +78,7 @@ http://localhost:8080
 
 Dependiendo de la configuración del proyecto, puedes tener diferentes endpoints disponibles para interactuar con la aplicación.
 
-###Ejecutar con docker compose
+### Ejecutar con docker compose
 Compilar y ejecutar el proyecto con Maven:
 
 ```bash
@@ -109,18 +109,18 @@ Una vez que la aplicación esté en ejecución, podrás acceder a ella mediante 
 
 http://localhost:8080
 
-##Documentacion de API (Swagger)
+## Documentacion de API (Swagger)
 Puedes consultar la documentacion de la API para consumir sus metodos en la siguiente url:
 http://localhost:8080/swagger-ui/index.html
 
-##Tecnologías Usadas
+## Tecnologías Usadas
 
 Spring Boot (Framework para aplicaciones Java)
 PostgreSQL (Base de datos relacional)
 Docker y Docker Compose (Contenerización y orquestación)
 Maven (Gestión de dependencias)
 
-#Estructura del Proyecto
+# Estructura del Proyecto
 ```textplain
 fuentes/nominaEmpresasBack/
 ├── src/
@@ -145,6 +145,6 @@ Dockerfile: Archivo para construir la imagen Docker de la aplicación.
 docker-compose.yml: Archivo de configuración para Docker Compose.
 
 
-##Notas adicionales
+## Notas adicionales
 Si estás ejecutando el proyecto en tu máquina local y tienes problemas de conexión con PostgreSQL, asegúrate de que el servicio de PostgreSQL esté en ejecución y accesible en el puerto configurado (5432 por defecto).
 
