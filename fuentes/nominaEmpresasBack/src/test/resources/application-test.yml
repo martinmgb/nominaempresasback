@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://pg_container:5432/empresas_bd  # URL de conexión a PostgreSQL
+    username: root  # Usuario de la base de datos
+    password: root    # Contraseña del usuario
+    driver-class-name: org.postgresql.Driver  # Controlador de PostgreSQL
+    hikari:
+      maximum-pool-size: 10  # Tamaño máximo de la conexión en el pool (opcional)
+      connection-timeout: 30000  # Tiempo máximo de espera para una conexión (opcional)
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: nominaempresasback

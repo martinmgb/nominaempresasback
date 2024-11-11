@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_DATABASE}  # URL de conexión a PostgreSQL
+    username: ${DB_USER}  # Usuario de la base de datos
+    password: ${DB_PASSWORD}    # Contraseña del usuario
+    driver-class-name: org.postgresql.Driver  # Controlador de PostgreSQL
+    hikari:
+      maximum-pool-size: 10  # Tamaño máximo de la conexión en el pool (opcional)
+      connection-timeout: 30000  # Tiempo máximo de espera para una conexión (opcional)
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  application:
+    name: nominaempresasback
